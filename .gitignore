@@ -1,5 +1,12 @@
+
 .DS_Store
 .idea
+.idea/*
 .__pycache__
 .model
+.model/*
+.MNIST-data
+.MNIST-data/*
 .utility/MNIST-data
+.utility/MNIST-data/*
+
