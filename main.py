@@ -16,7 +16,7 @@ def main(unused_argv):
     eval_data = mnist_data.test.images  # Returns np.array
     eval_labels = np.asarray(mnist_data.test.labels, dtype=np.int32)
 
-    mnist.train(train_data, train_labels)
+    # mnist.train(train_data, train_labels)
 
     results = mnist.evaluate(eval_data, eval_labels)
     print(results)

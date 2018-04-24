@@ -172,7 +172,7 @@ class Mnist:
                                           loss=loss,
                                           eval_metric_ops=eval_metric_ops)
 
-    def train(self, train_data, train_labels):
+    def train(self, train_data, train_labels, steps=20000):
         """Train the model"""
 
         train_input_fn = tf.estimator.inputs.numpy_input_fn(
@@ -184,7 +184,7 @@ class Mnist:
 
         self._classifier.train(
             input_fn=train_input_fn,
-            steps=14000,
+            steps=steps,
             hooks=[self._logging_hook])
 
     def evaluate(self, eval_data, eval_labels):
