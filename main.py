@@ -1,5 +1,6 @@
 import tensorflow as tf
 import numpy as np
+import cv2
 
 from mnist import Mnist
 
@@ -16,14 +17,17 @@ def main(unused_argv):
     eval_data = mnist_data.test.images  # Returns np.array
     eval_labels = np.asarray(mnist_data.test.labels, dtype=np.int32)
 
-    # mnist.train(train_data, train_labels)
+    mnist.train(train_data, train_labels)
 
     results = mnist.evaluate(eval_data, eval_labels)
     print(results)
 
-    #img = cv2.imread("/Users/andrea/mnist/test/img5.png", cv2.IMREAD_GRAYSCALE)
-    #img = np.asarray(1-img/255, dtype=np.float32)
-    #results = mnist.predict(np.reshape(img, (1, 784)))
+    # img = cv2.imread("test/img9.png", cv2.IMREAD_GRAYSCALE)
+    # img = cv2.bitwise_not(img)
+    # cv2.imwrite("test/img9.png", img)
+    # img = np.asarray(1-img/255, dtype=np.float32)
+
+    # results = mnist.predict(np.reshape(img, (1, 784)))
     # for result in results:
     #    print(result["classes"])
 
